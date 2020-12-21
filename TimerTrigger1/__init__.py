@@ -16,8 +16,6 @@ def copy_azure_files():
 
     copy_from_container = 'prod'
     copy_to_container = 'bkp'
-
-    print("\nLista de arquivos no container")
     listagem = blob_service.list_blobs(copy_from_container)
     for blob in listagem:
         blob_url = blob_service.make_blob_url(copy_from_container, blob.name)
